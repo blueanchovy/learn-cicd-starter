@@ -45,7 +45,7 @@ func TestGetAPIKey(t *testing.T) {
 			header.Add(test.key, test.value)
 
 			output, err := GetAPIKey(header)
-			if err = nil {
+			if err != nil {
 				if strings.Contains(err.Error(), test.expectErr) {
 					return
 				}
